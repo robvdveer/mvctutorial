@@ -13,7 +13,22 @@
 </head>
 <body>
     <div> 
-        @Model.Account.Username
+        @using (Html.BeginForm("Save", "Account"))
+        {
+            @Html.ValidationSummary(true)
+
+            @Html.HiddenFor(p => Model.Account.ID)
+
+            <p>@Html.LabelFor(p => Model.Account.ID):  @Html.DisplayFor(p => Model.Account.ID)</p>
+        <p>@Html.LabelFor(p => Model.Account.Username):  @Html.EditorFor(p => Model.Account.Username)@Html.ValidationMessageFor(p => Model.Account.Username)</p>
+        <p>@Html.LabelFor(p => Model.Account.Displayname):  @Html.EditorFor(p => Model.Account.Displayname)@Html.ValidationMessageFor(p => Model.Account.Displayname)</p>
+        <input type="submit" value="Opslaan"/>
+        }
+
+        @if(Model.Bericht != null)
+        {
+            <div style="color: red">@Model.Bericht</div>
+        }
     </div>
 </body>
 </html>

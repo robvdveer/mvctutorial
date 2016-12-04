@@ -10,7 +10,7 @@ namespace MVCTutorial.DataAccess
        public Models.DataModel.Account GetCurrentAcount()
         {
             //insert database shizzle
-            return new Models.DataModel.Account() { Username = "Cataclysm" };
+            return new Models.DataModel.Account() {ID = 4, Displayname = "ZZ", Username = "Cataclysm" };
         }
     }
 }

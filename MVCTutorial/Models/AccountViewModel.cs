@@ -9,9 +9,7 @@ namespace MVCTutorial.Models
     {
         public DataModel.Account Account { get; set; }
 
-        public string Foutmelding { get; set; }
-        public string Invulvelden { get; set; }
+        public string Bericht { get; set; }
 
-        public List<string> MogelijkeRechten { get; set; }
     }
 }

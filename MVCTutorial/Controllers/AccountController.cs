@@ -13,8 +13,6 @@ namespace MVCTutorial.Controllers
     {
         private AccountContext db = new AccountContext();
 
-        //stomme regel
-
         // GET: Account
         public ActionResult Index()
         {
@@ -25,10 +23,16 @@ namespace MVCTutorial.Controllers
             return View(myModel);
         }
 
-        public ActionResult Save()
+        public ActionResult Save(AccountViewModel data)
         {
-            var account = db.GetCurrentAcount();
-            return new HttpStatusCodeResult(404);
+            if(this.ModelState.IsValid)
+            {
+                //                db.SaveAccount(data.Account);
+                //ModelState.AddModelError(string.Empty, "Not niet gebouwd");
+                data.Bericht = "Jaja zover zijn we nog niet";
+            }
+
+            return View("Index", data);
         }
     }
 }
