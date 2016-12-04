@@ -13,6 +13,7 @@ namespace MVCTutorial.Controllers
     {
         private AccountContext db = new AccountContext();
 
+        //stomme regel
 
         // GET: Account
         public ActionResult Index()
